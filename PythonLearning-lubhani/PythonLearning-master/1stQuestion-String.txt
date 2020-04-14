@@ -1,0 +1,38 @@
+Question:
+Implement strStr().
+
+Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+class Solution:
+    def strStr(self, h: str, n: str) -> int:
+        
+        k=0
+        if(len(h)==0 and len(n)==0):
+            return 0
+        if(len(n)==0):
+            return 0
+        for i in range(0,len(h)):
+                j=0
+                k=i;
+                flag=0
+                while(j< len(n)):
+                        # print(j)
+                        # print("k=",k)
+                        if(k>= len(h)):
+                            return -1
+                        elif(h[k]==n[j]):
+                            k+=1
+                        else:
+                            break
+                        if(j== len(n)-1):
+                            flag=1
+                            break
+                        j+=1
+            
+                if(flag==1):
+                    return i
+               
+               
+                
+                  
+        return -1  

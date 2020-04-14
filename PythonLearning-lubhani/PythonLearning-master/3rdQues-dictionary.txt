@@ -1,0 +1,29 @@
+QUESTION:
+Given a string S consisting of lowercase Latin Letters. Find the first non repeating character in S.
+
+ANSWER:
+
+t= int(input())
+T=0
+while(T<t):
+    n= int(input())
+    s=input()
+    ans='-1'
+    
+    dic={}
+    for i in range(n):
+        # print(dic.get(s[i]))
+        if(dic.get(s[i])==None):
+            dic[s[i]]=1
+         
+        else:
+            # print(dic[s[i]])
+            dic[s[i]]=1+dic[s[i]]
+            
+    
+    for i in range(n):
+        if(dic[s[i]]==1):
+            ans=s[i]
+            break
+    print(ans) 
+    T+=1
